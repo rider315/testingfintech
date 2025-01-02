@@ -1,0 +1,71 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+}
+
+h3, p {
+    /* margin: 0; */
+}
+
+.maincontainer {
+    display: flex;
+    flex-direction: column; /* Change the direction to column for vertical centering */
+    align-items: center;
+    justify-content: center;
+     /* Full viewport height for vertical centering */
+    margin: auto;
+    margin-top: 70px;
+}
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 20px; */
+    
+    margin: auto;
+}
+
+.profile-image-container {
+    margin-right: 20px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+}
+
+.profile-text-container {
+    flex: 1;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.profile-social-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.profile-social-links li {
+    margin-right: 10px;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: #1e90ff; /* Light blue color for icons */
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007BFF; /* Darker blue on hover */
+}
