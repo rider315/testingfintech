@@ -1,0 +1,87 @@
+/* Features.css */
+.features-container {
+  padding: 6rem 0; /* More vertical padding */
+  background-color: #f9fafb; /* Lighter background */
+}
+
+.features-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.features-header {
+  text-align: center;
+  margin-bottom: 4rem; /* Increased spacing below the header */
+}
+
+.features-title {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+@media (min-width: 768px) {
+  .features-title {
+    font-size: 2.5rem;
+  }
+}
+
+.features-subtitle {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: #475569;
+}
+
+.features-grid {
+  margin-top: 0; /* Remove default margin */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 2rem;
+}
+
+.feature-card {
+  padding: 2rem; /* Increased padding */
+  background-color: #fff;
+  border-radius: 0.75rem; /* More rounded corners */
+  border: 1px solid #e5e7eb;
+  transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.feature-card:hover {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.feature-icon-bg {
+  width: 4rem; /* Larger icon background */
+  height: 4rem;
+  background-color: #e0f2fe; /* Lighter background */
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem; /* Space below the icon */
+}
+
+.feature-icon-color {
+  height: 2rem;
+  width: 2rem;
+  color: #2563eb;
+}
+
+.feature-card-title {
+  margin-top: 0;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.feature-card-description {
+  margin-top: 0.75rem;
+  color: #475569;
+  line-height: 1.6;
+}

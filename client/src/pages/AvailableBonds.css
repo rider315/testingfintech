@@ -1,0 +1,39 @@
+.available-bonds-container {
+    padding: 20px;
+  }
+  
+  .bonds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .bond-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bond-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .bond-card p {
+    margin-bottom: 5px;
+  }
+  
+  .invest-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .invest-button:hover {
+    background-color: #0056b3;
+  }

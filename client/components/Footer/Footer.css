@@ -1,24 +1,105 @@
-/* footer {
-    padding: 3.2rem;
-    text-align :center;
-    background-color :var(--btn-color);
-    margin-top:auto;
-}
- */
-
-
- body {
+/* Footer.css */
+.footer-container {
+    background-color: #1e293b; /* A slightly darker shade for better contrast */
+    color: #e2e8f0;       /* Lighter text for readability on the dark background */
+    padding: 4rem 0;     /* Increased vertical padding for better breathing room */
+  }
+  
+  .footer-content-wrapper {
+    max-width: 1200px; /* A common max-width for larger screens */
+    margin: 0 auto;      /* Center the content */
+    padding: 0 2rem;     /* Consistent horizontal padding */
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 3rem;           /* Increased gap between grid items */
+    margin-bottom: 3rem; /* Add some space before the copyright */
+  }
+  
+  .footer-section {
+    /* Styles for each section - can add specific styles if needed */
+  }
+  
+  .footer-title {
+    font-size: 1.5rem;     /* Slightly larger and more prominent */
+    font-weight: 600;
+    color: #cbd5e0;       /* A lighter shade for headings */
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #94a3b8;       /* Slightly muted description text */
+  }
+  
+  .footer-subtitle {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #cbd5e0;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links-list li {
+    margin-bottom: 0.75rem;
+  }
+  
+  .footer-link {
+    color: #94a3b8;
+    text-decoration: none; /* Remove underlines from links */
+    transition: color 0.2s ease-in-out;
+    display: block;       /* Make the entire link clickable */
+    padding: 0.25rem 0;  /* Add a little vertical padding for better touch targets */
+  }
+  
+  .footer-link:hover {
+    color: #fff;
+  }
+  
+  .footer-social-icons {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensure the body covers the full viewport height */
-}
-
-main {
-    flex: 1; /* Allow the main content to grow and fill the remaining space */
-}
-
-footer {
-    padding: 3.2rem;
+    gap: 1.5rem;        /* Increased gap for better spacing of icons */
+  }
+  
+  .footer-social-link {
+    color: #94a3b8;
+    font-size: 1.25rem; /* Slightly larger social icons */
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .footer-social-link:hover {
+    color: #fff;
+  }
+  
+  .footer-social-icon {
+    /* Inherits size from parent */
+  }
+  
+  .footer-copyright-wrapper {
+    padding-top: 2rem;
+    border-top: 1px solid #334155; /* A slightly lighter border */
     text-align: center;
-    background-color: var(--btn-color);
-}
+  }
+  
+  .footer-copyright-text {
+    font-size: 0.875rem;
+    color: #6b7280;       /* More muted copyright text */
+  }
+  
+  /* Media query for smaller screens to adjust grid gap and padding */
+  @media (max-width: 768px) {
+    .footer-grid {
+      gap: 2rem;
+    }
+    .footer-content-wrapper {
+      padding: 0 1rem;
+    }
+  }
