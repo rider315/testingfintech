@@ -1,63 +1,4 @@
-// import React, { useState, useEffect } from "react";
-// import "./AvailableBonds.css";
 
-// export const AvailableBonds = () => {
-//   const [availableBonds, setAvailableBonds] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     const fetchAvailableBonds = async () => {
-//       setLoading(true);
-//       setError(null);
-//       try {
-//         const response = await fetch("/api/bonds/available");
-//         if (!response.ok) {
-//           throw new Error(`HTTP error! status: ${response.status}`);
-//         }
-//         const data = await response.json();
-//         setAvailableBonds(data.bonds);
-//       } catch (error) {
-//         console.error("Error fetching available bonds:", error);
-//         setError(error);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-
-//     fetchAvailableBonds();
-//   }, []);
-
-//   if (loading) {
-//     return <p>Loading available bonds...</p>;
-//   }
-
-//   if (error) {
-//     return <p>Error fetching available bonds: {error.message}</p>;
-//   }
-
-//   return (
-//     <div className="available-bonds-container">
-//       <h2>Available Bonds</h2>
-//       <p>Discover high-yield investment opportunities</p>
-//       <div className="bonds-grid">
-//         {availableBonds.map((bond) => (
-//           <div key={bond._id} className="bond-card">
-//             <h3>{bond.issuer}</h3>
-//             <p>Interest Rate: {(bond.interestRate * 100).toFixed(2)}%</p>
-//             <p>Tenure: {bond.tenure}</p>
-//             <p>Min Investment: ₹{bond.minInvestment}</p>
-//             <p>Available Units: {bond.availableUnits}</p>
-//             <p>Risk Level: {bond.riskLevel}</p>
-//             <button className="invest-button">Invest Now</button>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AvailableBonds;
 
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../store/auth";
@@ -165,3 +106,5 @@ export const AvailableBonds = () => {
 };
 
 export default AvailableBonds;
+
+

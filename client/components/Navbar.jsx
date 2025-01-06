@@ -169,6 +169,11 @@ export const Navbar = () => {
                   Privacy Policy
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/bonds" onClick={closeMenu} className="navbar-link">
+                  Available Bonds
+                </NavLink>
+              </li>
 
               {isLoggedIn && (
                 <li>
