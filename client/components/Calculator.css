@@ -1,0 +1,130 @@
+/* Calculator.css */
+
+.calculator-container {
+    background-color: #f9fafb; /* Light gray background */
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 3rem;
+    max-width: 700px; /* Slightly narrower for better focus */
+    margin: 2rem auto; /* Add top/bottom margin */
+  }
+  
+  .calculator-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb; /* Subtle divider */
+    padding-bottom: 1.5rem;
+  }
+  
+  .calculator-icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    color: #2563eb; /* Stronger blue color */
+    margin-right: 1rem;
+  }
+  
+  .calculator-title {
+    font-size: 2rem;
+    font-weight: 700; /* Bold font weight */
+    color: #111827; /* Darker text color */
+  }
+  
+  .calculator-input-group {
+    margin-bottom: 2rem;
+  }
+  
+  .calculator-label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4b5563;
+    margin-bottom: 0.75rem;
+  }
+  
+  .calculator-range {
+    width: 100%;
+    height: 0.6rem; /* Slightly thicker slider */
+    background-color: #e0e7ff; /* Light blue for slider track */
+    border-radius: 0.75rem;
+    -webkit-appearance: none;
+    cursor: pointer;
+    outline: none; /* Remove default focus outline */
+  }
+  
+  .calculator-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.4rem;
+    height: 1.4rem;
+    background-color: #2563eb; /* Strong blue for thumb */
+    cursor: grab;
+    border-radius: 50%;
+    border: 3px solid #ffffff; /* White border for better visibility */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  }
+  
+  .calculator-range::-moz-range-thumb {
+    width: 1.4rem;
+    height: 1.4rem;
+    background-color: #2563eb;
+    cursor: grab;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border: none; /* Remove default border */
+  }
+  
+  .calculator-amount-display,
+  .calculator-tenure-display,
+  .calculator-rate-display {
+    text-align: right;
+    font-weight: 700;
+    color: #2563eb;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .calculator-results {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #edf2ff; /* Very light blue for results */
+    border-radius: 0.75rem;
+    text-align: center;
+    border: 1px solid #d1d5db; /* Subtle border for the results section */
+  }
+  
+  .calculator-returns-label {
+    color: #6b7280;
+    font-size: 1.1rem;
+  }
+  
+  .calculator-returns-amount {
+    font-size: 2.5rem;
+    font-weight: 800; /* Even bolder for emphasis */
+    color: #2563eb;
+    letter-spacing: -0.05em; /* Slightly reduce letter spacing */
+    margin-top: 0.5rem;
+  }
+  
+  .calculator-returns-description {
+    font-size: 0.9rem;
+    color: #71717a;
+    margin-top: 0.75rem;
+  }
+  
+  /* Add some subtle hover/focus effects for interactivity */
+  .calculator-range:hover,
+  .calculator-range:focus {
+    background-color: #d1dfff; /* Slightly darker on hover/focus */
+  }
+  
+  .calculator-range::-webkit-slider-thumb:active {
+    cursor: grabbing;
+    transform: scale(1.05); /* Slight scale up on active */
+  }
+  
+  .calculator-range::-moz-range-thumb:active {
+    cursor: grabbing;
+    transform: scale(1.05);
+  }

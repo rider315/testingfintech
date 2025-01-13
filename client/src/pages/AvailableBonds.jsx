@@ -1,21 +1,21 @@
-
-
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../store/auth";
 import "./AvailableBonds.css";
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 export const AvailableBonds = () => {
   const [availableBonds, setAvailableBonds] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { user, authorizationToken, API } = useAuth(); // Destructure API from useAuth
+  const { authorizationToken, API, isLoggedIn } = useAuth(); // Destructure isLoggedIn, remove user
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const fetchAvailableBonds = async () => {
       setLoading(true);
       setError(null);
       try {
-        const response = await fetch(`${API}/api/bonds/available`); // Use API from useAuth
+        const response = await fetch(`${API}/api/bonds/available`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -30,24 +30,25 @@ export const AvailableBonds = () => {
     };
 
     fetchAvailableBonds();
-  }, [API]); // Add API to dependency array
+  }, [API]); // Removed isLoggedIn and navigate from dependency array
 
   const handleInvest = async (bondId) => {
-    if (!authorizationToken) {
-      // Handle the case where the user is not logged in, e.g., redirect to login page
-      console.log("User not logged in. Redirecting to login.");
-      // You might want to use history.push('/login') or similar for redirection
+    if (!isLoggedIn) { // Check isLoggedIn here
+      console.log("User not logged in. Redirecting to login to invest.");
+      navigate('/login'); // Redirect to login if not logged in when trying to invest
       return;
     }
+
+    console.log("Authorization Token being sent for investment:", authorizationToken);
 
     try {
       const response = await fetch(`${API}/api/bonds/invest`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: authorizationToken, // Pass the token for authentication
+          Authorization: authorizationToken,
         },
-        body: JSON.stringify({ availableBondId: bondId, investmentAmount: 1 }), // Assuming 1 unit for simplicity
+        body: JSON.stringify({ availableBondId: bondId, investmentAmount: 1 }),
       });
 
       if (!response.ok) {
@@ -57,7 +58,6 @@ export const AvailableBonds = () => {
       const data = await response.json();
       console.log("Investment successful:", data);
 
-      // Update availableBonds state to reflect the reduced availableUnits
       setAvailableBonds((prevBonds) =>
         prevBonds.map((bond) =>
           bond._id === bondId
@@ -67,7 +67,7 @@ export const AvailableBonds = () => {
       );
     } catch (error) {
       console.error("Error investing in bond:", error);
-      // Handle investment error, e.g., display an error message to the user
+      // Handle investment error
     }
   };
 
@@ -106,5 +106,3 @@ export const AvailableBonds = () => {
 };
 
 export default AvailableBonds;
-
-
